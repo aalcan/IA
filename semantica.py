@@ -54,3 +54,9 @@ def recorrer(A,B,C, F):
         return toBe(A,B,C,F)
 
 print(recorrer("gato","vive","agua",cadena_json['Conocimientos']))
+print(recorrer("gato","vive","tierra",cadena_json['Conocimientos']))
+print(recorrer("gato","es","tetrapodo",cadena_json['Conocimientos']))
+print(recorrer("oso","tiene","garras",cadena_json['Conocimientos']))
+print(recorrer("oso","vive","agua",cadena_json['Conocimientos']))
+print(recorrer("gallo","es","vertebrado",cadena_json['Conocimientos']))
+print(recorrer("delfin","tiene","garras",cadena_json['Conocimientos']))
