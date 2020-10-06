@@ -1,62 +1,41 @@
 import json
-cadena_json = json.load(open('conocimientos.json'))
-print(cadena_json['Conocimientos']);
+Conocimiento = False
+with open('conocimientos.json','r') as read_file:
+	data = json.load(read_file)
+	Conocimiento = data['Conocimientos']
+#print(Conocimiento)
 ###########################################################################
 #Funciona solo si el proceso es igual para cada comparacion 
 ###########################################################################
-def toBe(A,B,C, F):
-    if not F:
-        return False
-    D = len(F)
-    i = 0
-    while i < D:
-        if F[i][0] == A:
-            if F[i][1] == B:
-                if F[i][2] == C:
-                    return True
-                else:
-                    i = i + 1
-            else:
-                #A = C[i][1]
-                i = i + 1
-        else:
-            i = i + 1
-            if  i == D:
-                return False
+def toBe(A,B,C,F):
+	if not F:
+		return False
+	Elemento = [e for e in F if e[0] == A]
+	if not Elemento:
+		return False
+	for x in Elemento:
+		if B == x[1]:
+			if C == x[2]:
+				return True
+			else:
+				return toBe(x[2],B,C,F)
+	
+
+def esta(A,B,C):
+	return toBe(A,B,C,Conocimiento)
 
 
-def toBeEs(A,B,C, F):
-    if not F:
-        return False
-    D = len(F)
-    i = 0
-    while i < D:
-        if F[i][0] == A:
-            if F[i][1] == B:
-                if F[i][2] == C:
-                    return True
-                else:
-                    A = F[i][2]
-                    i = i + 1
-            else:
-                #A = C[i][1]
-                i = i + 1
-        else:
-            i = i + 1
-            if  i == D:
-                return False
+def main():
+	print("Bienvenido")
+	print('Puedes consultar escribiendo esta("<animal>","<es, vive o tiene>","<Conocimiento>"")')
+	print('Puedes salir presionando "q" o escribiendo quit()')
+	Terminar = False
+	while not Terminar:
+		Leer = input("> ")
+		if Leer == 'q':
+			return
+		Imprimir = eval(Leer)
+		print(Imprimir)
 
-
-def recorrer(A,B,C, F):
-    if B == "es"  :
-         return toBeEs(A,B,C, F)
-    else:
-        return toBe(A,B,C,F)
-
-print(recorrer("gato","vive","agua",cadena_json['Conocimientos']))
-print(recorrer("gato","vive","tierra",cadena_json['Conocimientos']))
-print(recorrer("gato","es","tetrapodo",cadena_json['Conocimientos']))
-print(recorrer("oso","tiene","garras",cadena_json['Conocimientos']))
-print(recorrer("oso","vive","agua",cadena_json['Conocimientos']))
-print(recorrer("gallo","es","vertebrado",cadena_json['Conocimientos']))
-print(recorrer("delfin","tiene","garras",cadena_json['Conocimientos']))
+if __name__ == '__main__':
+	main()
