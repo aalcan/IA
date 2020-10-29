@@ -163,11 +163,11 @@
 """
 import json
 Probabilidades = False
-with open('base.json','r') as read_file:
+with open('data.json','r') as read_file:
 	data = json.load(read_file)
 	Probabilidades = data['Probabilidades']
 
-#print(Probabilidades)
+print(Probabilidades)
 archivo = open('tweet.txt', 'r')
 contenido = archivo.read()
 #print(contenido)

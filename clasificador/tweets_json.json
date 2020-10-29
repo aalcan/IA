@@ -1,0 +1,14 @@
+{
+	"Tweets" : [
+		{"Stream":false, "texto":"Que pedo wey"},
+		{"Stream":true, "texto":"Vamos a darle un ratito a terror en este Martes claro que sí"},
+		{"Stream":false, "texto":"Assassin's Creed Syndicate: La Historia en 1 Video"},
+		{"Stream":true, "texto":"Vamos a seguirle al Bloodborne =)"},
+		{"Stream":false, "texto":"Chale seño ya le puse a mis tacos"},
+		{"Stream":false, "texto":"Lo mismo me va a pasar cuando haga un Top de los juegos que más me gustaron en 2020. Ni pedo."},
+		{"Stream":false, "texto":"¡Nuevo Video! ROBOCOP: La Saga en 1 Video, vayan a ver esta historia de Cyborgs, empresas millonarias y gente idiota"},
+		{"Stream":true, "texto":"Vamos a darle a la nueva temporada de FALL GUYS"},
+		{"Stream":true, "texto":"Vamos a continuarle al Bloodborne, acompañenme a sufrir"},
+		{"Stream":true, "texto":"Vamos a seguirle al Sheep Raider"}
+	]
+}
